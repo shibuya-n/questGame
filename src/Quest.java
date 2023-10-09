@@ -12,10 +12,6 @@ public class Quest {
 
     public static void ask(Games y){
 
-
-
-
-
         System.out.println("Welcome to League of Letters, " + y.name);
         System.out.println("Which game would you like to play?");
         System.out.println("1. Scramble");
@@ -28,24 +24,19 @@ public class Quest {
         // add animation?
         // dynamic selection?
 
-        while (true){
-            if (y.win){
-                break;
-            }
+        while (!y.win) {
 
-            if (input.equals("1")){
+            if (input.equals("1")) {
                 y.scramble();
-            }
-            else if (input.equals("2")){
+
+            } else if (input.equals("2")) {
                 y.math();
-            }
-            else if (input.equals("3")){
+
+            } else if (input.equals("3")) {
                 y.trivia();
-            }
-            else if (input.equals("4")){
+            } else if (input.equals("4")) {
                 y.challenge();
-            }
-            else {
+            } else {
                 ask(y);
             }
 
