@@ -7,11 +7,25 @@ public class Games {
 
     boolean win = false;
 
+    boolean completedScramble = false;
+    boolean completedMath = false;
+    boolean completedTrivia = false;
+
     public Games(String x){
         name = x;
     }
 
 
+    public void checkPlayer() {
+        if (points == 3 && completedScramble) {
+            level++;
+            System.out.println("Congrats! You leveled up! The next stage is unlocked.");
+        }
+        if (points == 3 && completedScramble) {
+            level++;
+            System.out.println("Congrats! You leveled up! The next stage is unlocked.");
+        }
+    }
     public void scramble(){
         System.out.println("Welcome to the scramble quest, challenger " + name);
 
