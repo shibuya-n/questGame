@@ -1,7 +1,7 @@
 public class Games {
     String name;
     int points;
-    int level = 2;
+    int level = 1;
 
     int mathStage = 1;
 
@@ -18,31 +18,54 @@ public class Games {
         String scrambleString = "";
         String solutions = "";
 
+        int ascii = (int)(Math.random() * 11) + 97;
+
         for (int i = 0; i < 6; i++) {
 
-            int ascii = (int)(Math.random() * 26) + 97;
-            scrambleString = scrambleString + " " + (char)ascii;
+            ascii += i;
+            solutions = solutions + (char)ascii;
 
         }
+
+        String temp = "";
+        temp += solutions;
+
+        for (int i = 0; i < solutions.length(); i++){
+            int random = (int)(Math.random() * temp.length()-1) + 1;
+
+            if (temp.length() == 1) {
+                scrambleString += temp;
+                break;
+            }
+            else {
+                scrambleString += temp.charAt(random);
+
+                temp = temp.substring(0, random) + temp.substring(random + 1);
+            }
+
+        }
+
+
         System.out.println("Unscramble this string: ");
         System.out.println(scrambleString);
 
-        int n = scrambleString.length();
-
-
-        for (int i = 0; i < n-1; i++) {
-
-            String minIndex = scrambleString.substring(i, i+1);
-
-            for (int j = i+1; j < n; j++) {
-                if (scrambleString.substring(j, j + 1).compareTo(minIndex) < 0) {
-                    minIndex = scrambleString.substring(j, j + 1);
-
-                }
-                solutions = solutions + minIndex;
-            }
-        }
+        System.out.println("");
+        System.out.println("What is your answer?");
         System.out.println(solutions);
+
+        if (Quest.getInput().equals(solutions)) {
+            points++;
+            System.out.println("You gained a point! Current points: " + points );
+
+        }
+        else {
+            System.out.println("Wrong! Restarting...");
+            System.out.println("");
+            scramble();
+        }
+
+
+
 
     }
 
@@ -114,39 +137,19 @@ public class Games {
     public static boolean addition (int randOne, int randTwo, int input){
             int answer = randOne + randTwo;
 
-            if (input == answer){
-                return true;
-            }
-            else {
-                return false;
-            }
+        return input == answer;
         }
     public static boolean subtraction(int randOne, int randTwo, int input){
             int answer = randOne - randTwo;
-            if (input == answer){
-                return true;
-            }
-            else {
-                return false;
-            }
+        return input == answer;
     }
 
     public static boolean multiplication(int randOne, int randTwo, int input){
         int answer = randOne * randTwo;
-        if (input == answer){
-            return true;
-        }
-        else {
-            return false;
-        }
+        return input == answer;
     } public static boolean division(int randOne, int randTwo, int input){
         int answer = randOne / randTwo;
-        if (input == answer){
-            return true;
-        }
-        else {
-            return false;
-        }
+        return input == answer;
     }
     public void trivia(){
         if (this.level <=2) {

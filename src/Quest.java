@@ -28,6 +28,7 @@ public class Quest {
 
             if (input.equals("1")) {
                 y.scramble();
+                break;
 
             } else if (input.equals("2")) {
                 y.math();
