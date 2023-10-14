@@ -1,3 +1,4 @@
+
 public class Games {
     String name;
     int points;
@@ -17,13 +18,17 @@ public class Games {
 
 
     public void checkPlayer() {
-        if (points == 3 && completedScramble) {
-            level++;
+        if (this.points == 3 && completedScramble) {
+            this.level++;
             System.out.println("Congrats! You leveled up! The next stage is unlocked.");
         }
-        if (points == 3 && completedScramble) {
-            level++;
+        if (this.points == 6 && completedMath) {
+            this.level++;
             System.out.println("Congrats! You leveled up! The next stage is unlocked.");
+        }
+        if (this.points == 9 && completedTrivia) {
+            this.level++;
+            System.out.println("Congrats! You leveled up! The FINAL BOSS is unlocked.");
         }
     }
     public void scramble(){
@@ -36,7 +41,8 @@ public class Games {
 
         for (int i = 0; i < 6; i++) {
 
-            ascii += i;
+            ascii += (int)(Math.random() * 3) + 1;
+
             solutions = solutions + (char)ascii;
 
         }
@@ -68,8 +74,12 @@ public class Games {
         System.out.println(solutions);
 
         if (Quest.getInput().equals(solutions)) {
-            points++;
-            System.out.println("You gained a point! Current points: " + points );
+            this.points++;
+            System.out.println("");
+            System.out.println("You gained a point! Current points: " + this.points );
+            System.out.println("");
+            completedScramble = true;
+            checkPlayer();
 
         }
         else {
@@ -88,8 +98,9 @@ public class Games {
     }
 
     public void math() {
+        System.out.println(this.level);
 
-        if (this.level <= 2) {
+        if (this.level < 2) {
             System.out.println("You aren't strong enough for this level yet. :(");
 
         } else {
@@ -103,8 +114,10 @@ public class Games {
 
                 if (addition(x, y, Integer.parseInt(Quest.getInput()))) {
                     mathStage++;
+
                     math();
                 } else {
+                    System.out.println("Wrong answer! Restarting...");
                     math();
                 }
             } else if (mathStage == 2) {
@@ -115,8 +128,10 @@ public class Games {
 
                 if (subtraction(x, y, Integer.parseInt(Quest.getInput()))) {
                     mathStage++;
+
                     math();
                 } else {
+                    System.out.println("Wrong answer! Restarting...");
                     math();
                 }
 
@@ -128,21 +143,27 @@ public class Games {
 
                 if (multiplication(x, y, Integer.parseInt(Quest.getInput()))) {
                     mathStage++;
+
                     math();
                 } else {
+                    System.out.println("Wrong answer! Restarting...");
                     math();
                 }
             }
             else {
-                System.out.println("Stage 4: Multiplication");
+                System.out.println("Stage 4: Division");
                 int x = randomInt();
                 int y = randomInt();
                 System.out.println("What is " + x + " / " + y + "? ");
 
-                if (division(x, y, Integer.parseInt(Quest.getInput()))) {
-                    mathStage++;
-                    math();
+                if (division(x, y, Double.parseDouble(Quest.getInput()))) {
+
+                    points += 3;
+                    completedMath = true;
+                    System.out.println("Good job! Challenge complete! Points: " + this.points);
+                    checkPlayer();
                 } else {
+                    System.out.println("Wrong answer! Restarting...");
                     math();
                 }
             }
@@ -161,9 +182,12 @@ public class Games {
     public static boolean multiplication(int randOne, int randTwo, int input){
         int answer = randOne * randTwo;
         return input == answer;
-    } public static boolean division(int randOne, int randTwo, int input){
-        int answer = randOne / randTwo;
-        return input == answer;
+    } public static boolean division(int randOne, int randTwo, double input){
+
+        double answer = (double) randOne / randTwo;
+        String answerFixed = answer.toFixed(2);
+
+        return input == ;
     }
     public void trivia(){
         if (this.level <=2) {
@@ -176,7 +200,7 @@ public class Games {
     }public void challenge(){
         if (this.level <=3) {
             System.out.println("You aren't strong enough for this level yet. :(");
-
+            this.win = true;
         }else {
             //add challenge (binary convert?)
         }
