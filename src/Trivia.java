@@ -10,13 +10,33 @@ public class Trivia {
 
     public int question(){
         String answer = "";
-        String input = "";
         switch (questionNumber) {
             case 1 :
                 System.out.println("Who is the computer science teacher?");
-                input = Quest.getInput();
+                System.out.println("A. Mr. Chau");
+                System.out.println("B. Mr. Woodard");
+                System.out.println("C. Dr. Hackenburg");
+                System.out.println("D. Ms. Romero");
+                answer = "a";
+
+                if (answerCheck(Quest.getInput(), answer)){
+                    return 1;
+                } else {
+                    return -1;
+                }
             case 2 :
                 System.out.println("Who is the head of the computer science department?");
+                System.out.println("A. Dr. Hackenburg");
+                System.out.println("B. Mr. Woodard");
+                System.out.println("C. Mr. Chau");
+                System.out.println("D. Ms. Romero");
+                answer = "b";
+
+                if (answerCheck(Quest.getInput(), answer)){
+                    return 1;
+                } else {
+                    return -1;
+                }
             case 3 :
                 System.out.println("What does 'int' stand for?");
             case 4 :
