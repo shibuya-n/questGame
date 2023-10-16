@@ -208,6 +208,8 @@ public class Games {
         for (int i = 0; i < 3; i++) {
             int random = (int) (Math.random() * 13) + 1;
             Trivia x = new Trivia(random);
+
+            points += x.question();
         }
     }
     public void challenge(){

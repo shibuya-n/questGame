@@ -8,10 +8,13 @@ public class Trivia {
         questionNumber = x;
     }
 
-    public boolean question(){
+    public int question(){
+        String answer = "";
+        String input = "";
         switch (questionNumber) {
             case 1 :
                 System.out.println("Who is the computer science teacher?");
+                input = Quest.getInput();
             case 2 :
                 System.out.println("Who is the head of the computer science department?");
             case 3 :
@@ -35,7 +38,15 @@ public class Trivia {
             case 12 :
                 System.out.println("");
             case 13 :
-                System.out.println("");
+                System.out.println("What net force is required to accelerate a 15 kg box from a velocity of 6.0 ms^-1 to 12 ms^-1 in 2.0s?");
+        }
+    }
+    public boolean answerCheck(String input, String answer){
+        if (input.equals(answer)) {
+            return true;
+        }
+        else {
+            return false;
         }
     }
 }
