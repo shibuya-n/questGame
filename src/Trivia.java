@@ -27,15 +27,15 @@ public class Trivia {
             case 8 :
                 System.out.println("Which data type is used to store text?");
             case 9 :
-                System.out.println("");
+                System.out.println("What does 12 % 2 equal?");
             case 10 :
-                System.out.println("");
+                System.out.println("What is the difference between float and a double?");
             case 11 :
-                System.out.println("");
+                System.out.println("How would one create a nested for loop?");
             case 12 :
-                System.out.println("");
+                System.out.println("What is a boolean?");
             case 13 :
-                System.out.println("");
+                System.out.println("How would you cast a string to an integer?");
         }
     }
 }
