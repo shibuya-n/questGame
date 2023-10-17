@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9caa950-e9a3-43a5-bbca-d8d20e3f8fd7" name="Changes" comment="trivia if else doesn't work">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Games.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Games.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Quest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Quest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Trivia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trivia.java" afterDir="false" />
-    </list>
+    <list default="true" id="b9caa950-e9a3-43a5-bbca-d8d20e3f8fd7" name="Changes" comment="do the challenge and make eveyrthing look nice" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -123,7 +118,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697511650759</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="do the challenge and make eveyrthing look nice">
+      <option name="closed" value="true" />
+      <created>1697522630414</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1697522630414</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -143,6 +146,7 @@
     <MESSAGE value="notes: fix start page and do rest of levels -- should do point system or just level system?" />
     <MESSAGE value="more work on the trivia section" />
     <MESSAGE value="trivia if else doesn't work" />
-    <option name="LAST_COMMIT_MESSAGE" value="trivia if else doesn't work" />
+    <MESSAGE value="do the challenge and make eveyrthing look nice" />
+    <option name="LAST_COMMIT_MESSAGE" value="do the challenge and make eveyrthing look nice" />
   </component>
 </project>
