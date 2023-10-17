@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9caa950-e9a3-43a5-bbca-d8d20e3f8fd7" name="Changes" comment="do the challenge and make eveyrthing look nice" />
+    <list default="true" id="b9caa950-e9a3-43a5-bbca-d8d20e3f8fd7" name="Changes" comment="test">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Games.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Games.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Trivia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trivia.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -214,6 +214,12 @@ public class Games {
 
         }else {
             System.out.println("Welcome to trivia quest, challenger " + name);
+
+            System.out.println();
+            System.out.println("Make sure to get all these questions right! You will have to restart if you get a question wrong!");
+            System.out.println("Example input answer: a");
+            System.out.println();
+
             System.out.println("STAGE ONE");
             stageOne();
 
@@ -236,15 +242,21 @@ public class Games {
             System.out.println("Question " + i + " of 3");
             Trivia x = new Trivia(random);
 
-            stagePoints += x.question();
+           if (x.question()){
+               System.out.println("Correct!");
+               stagePoints++;
+           }
+           else {
+               System.out.println();
+               System.out.println("Wrong answer! Restarting...");
+               System.out.println();
+               stageOne();
+           }
         }
         if (stagePoints >= 3){
             stageTwo();
         }
-        else {
-            System.out.println("You didn't get them all right :3 Try again!");
-            stageOne();
-        }
+
     }
     public static void stageTwo(){
         System.out.println("STAGE TWO");
@@ -254,15 +266,21 @@ public class Games {
             System.out.println("Question " + i + " of 4");
             Trivia x = new Trivia(random);
 
-            stagePoints += x.question();
+            if (x.question()){
+                System.out.println("Correct!");
+                stagePoints++;
+            }
+            else {
+                System.out.println();
+                System.out.println("Wrong answer! Restarting...");
+                System.out.println();
+                stageTwo();
+            }
         }
         if (stagePoints >= 4){
             stageThree();
         }
-        else {
-            System.out.println("You didn't get them all right :3 Try again!");
-            stageTwo();
-        }
+
     }
     public static void stageThree(){
         int stagePoints = 0;
@@ -271,15 +289,21 @@ public class Games {
             System.out.println("Question " + i + " of 5");
             Trivia x = new Trivia(random);
 
-            stagePoints += x.question();
+            if (x.question()){
+                System.out.println("Correct!");
+                stagePoints++;
+            }
+            else {
+                System.out.println();
+                System.out.println("Wrong answer! Restarting...");
+                System.out.println();
+                stageThree();
+            }
         }
         if (stagePoints >= 5){
             triviaWin = true;
         }
-        else {
-            System.out.println("You didn't get them all right :3 Try again!");
-            stageThree();
-        }
+
     }
     public void challenge(){
         if (this.level <=3) {

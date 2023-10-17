@@ -8,8 +8,11 @@ public class Trivia {
         questionNumber = x;
     }
 
-    public int question(){
+    public boolean question(){
         String answer;
+
+
+
         switch (questionNumber) {
 
             case 1 :
@@ -22,9 +25,9 @@ public class Trivia {
                 answer = "a";
 
                 if (answerCheck(Quest.getInput(), answer)){
-                    return 1;
+                    return true;
                 } else {
-                    return -1;
+                    return false;
                 }
             case 2 :
                 System.out.println("Who is the head of the computer science department?");
@@ -35,9 +38,9 @@ public class Trivia {
                 answer = "d";
 
                 if (answerCheck(Quest.getInput(), answer)){
-                    return 1;
+                    return true;
                 } else {
-                    return -1;
+                    return false;
                 }
             case 3 :
                 System.out.println("What does 'int' stand for in Java?");
@@ -48,9 +51,9 @@ public class Trivia {
                 answer = "d";
 
                 if (answerCheck(Quest.getInput(), answer)){
-                    return 1;
+                    return true;
                 } else {
-                    return -1;
+                    return false;
                 }
             case 4 :
                 System.out.println("Where is the computer science classroom located?");
@@ -61,9 +64,9 @@ public class Trivia {
                 answer = "b";
 
                 if (answerCheck(Quest.getInput(), answer)){
-                    return 1;
+                    return true;
                 } else {
-                    return -1;
+                    return false;
                 }
             case 5 :
                 System.out.println("What is the difference between a 'double' and an 'int'?");
@@ -74,9 +77,9 @@ public class Trivia {
                 answer = "a";
 
                 if (answerCheck(Quest.getInput(), answer)){
-                    return 1;
+                    return true;
                 } else {
-                    return -1;
+                    return false;
                 }
             case 6 :
                 System.out.println("How many bits can a single byte store?");
@@ -87,9 +90,9 @@ public class Trivia {
                 answer = "a";
 
                 if (answerCheck(Quest.getInput(), answer)){
-                    return 1;
+                    return true;
                 } else {
-                    return -1;
+                    return false;
                 }
             case 7 :
                 System.out.println("How would one print a statement in java?");
@@ -100,9 +103,9 @@ public class Trivia {
                 answer = "c";
 
                 if (answerCheck(Quest.getInput(), answer)){
-                    return 1;
+                    return true;
                 } else {
-                    return -1;
+                    return false;
                 }
             case 8 :
                 System.out.println("Which data type is used to store text?");
@@ -113,9 +116,9 @@ public class Trivia {
                 answer = "c";
 
                 if (answerCheck(Quest.getInput(), answer)){
-                    return 1;
+                    return true;
                 } else {
-                    return -1;
+                    return false;
                 }
             case 9 :
                 System.out.println("What does 12 % 2 equal?");
@@ -126,9 +129,9 @@ public class Trivia {
                 answer = "c";
 
                 if (answerCheck(Quest.getInput(), answer)){
-                    return 1;
+                    return true;
                 } else {
-                    return -1;
+                    return false;
                 }
             case 10 :
                 System.out.println("What is the difference between float and a double?");
@@ -139,9 +142,9 @@ public class Trivia {
                 answer = "b";
 
                 if (answerCheck(Quest.getInput(), answer)){
-                    return 1;
+                    return true;
                 } else {
-                    return -1;
+                    return false;
                 }
             case 11 :
                 System.out.println("What net force is required to accelerate a 15 kg box from a velocity of 6.0 ms–1 to 12 ms–1 in 2.0 s?");
@@ -152,9 +155,9 @@ public class Trivia {
                 answer = "b";
 
                 if (answerCheck(Quest.getInput(), answer)){
-                    return 1;
+                    return true;
                 } else {
-                    return -1;
+                    return false;
                 }
             case 12 :
                 System.out.println("What is a boolean?");
@@ -165,9 +168,9 @@ public class Trivia {
                 answer = "a";
 
                 if (answerCheck(Quest.getInput(), answer)){
-                    return 1;
+                    return true;
                 } else {
-                    return -1;
+                    return false;
                 }
             case 13 :
                 System.out.println("How would you cast a string to an integer?");
@@ -178,12 +181,12 @@ public class Trivia {
                 answer = "d";
 
                 if (answerCheck(Quest.getInput(), answer)){
-                    return 1;
+                    return true;
                 } else {
-                    return -1;
+                    return false;
                 }
         }
-        return 0;
+        return true;
     }
     public boolean answerCheck(String input, String answer){
         return input.equals(answer);
