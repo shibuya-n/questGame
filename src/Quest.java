@@ -21,6 +21,8 @@ public class Quest {
 
         while (!y.win) {
             System.out.println("Welcome to League of Letters, " + y.name);
+            System.out.println("Your points: " + y.points);
+            System.out.println();
             System.out.println("Which game would you like to play?");
             System.out.println("1. Scramble");
             System.out.println("2. Math");
@@ -28,7 +30,7 @@ public class Quest {
             System.out.println("FINAL BOSS (unlocked after level 3)");
             String input = getInput();
 
-            System.out.println("");
+            System.out.println();
 
             if (input.equals("1")) {
                 y.scramble();

@@ -20,17 +20,23 @@ public class Games {
 
 
     public void checkPlayer() {
-        if (this.points == 3 && completedScramble) {
+        if (this.points >= 3 && completedScramble) {
             this.level++;
+            System.out.println();
             System.out.println("Congrats! You leveled up! The next stage is unlocked.");
+            System.out.println();
         }
-        if (this.points == 6 && completedMath) {
+        if (this.points >= 6 && completedMath) {
             this.level++;
+            System.out.println();
             System.out.println("Congrats! You leveled up! The next stage is unlocked.");
+            System.out.println();
         }
-        if (this.points == 9 && completedTrivia) {
+        if (this.points >= 9 && completedTrivia) {
             this.level++;
+            System.out.println();
             System.out.println("Congrats! You leveled up! The FINAL BOSS is unlocked.");
+            System.out.println();
         }
     }
     public void scramble(){
@@ -71,22 +77,22 @@ public class Games {
         System.out.println("Unscramble this string: ");
         System.out.println(scrambleString);
 
-        System.out.println("");
+        System.out.println();
         System.out.println("What is your answer?");
         System.out.println(solutions);
 
         if (Quest.getInput().equals(solutions)) {
             this.points++;
-            System.out.println("");
+            System.out.println();
             System.out.println("You gained a point! Current points: " + this.points );
-            System.out.println("");
+            System.out.println();
             completedScramble = true;
             checkPlayer();
 
         }
         else {
             System.out.println("Wrong! Restarting...");
-            System.out.println("");
+            System.out.println();
             scramble();
         }
 
@@ -100,7 +106,7 @@ public class Games {
     }
 
     public void math() {
-        System.out.println(this.level);
+
 
         if (this.level < 2) {
             System.out.println("You aren't strong enough for this level yet. :(");
@@ -117,6 +123,8 @@ public class Games {
                 if (addition(x, y, Integer.parseInt(Quest.getInput()))) {
                     mathStage++;
                     points += 1;
+                    System.out.println("Right Answer! Plus 1 point.");
+                    checkPlayer();
                     math();
                 } else {
                     System.out.println("Wrong answer! Restarting...");
@@ -131,6 +139,8 @@ public class Games {
                 if (subtraction(x, y, Integer.parseInt(Quest.getInput()))) {
                     mathStage++;
                     points += 1;
+                    System.out.println("Right Answer! Plus 1 point.");
+                    checkPlayer();
                     math();
                 } else {
                     System.out.println("Wrong answer! Restarting...");
@@ -146,6 +156,8 @@ public class Games {
                 if (multiplication(x, y, Integer.parseInt(Quest.getInput()))) {
                     mathStage++;
                     points += 1;
+                    System.out.println("Right Answer! Plus 1 point.");
+                    checkPlayer();
                     math();
                 } else {
                     System.out.println("Wrong answer! Restarting...");
@@ -160,9 +172,12 @@ public class Games {
 
                 if (division(x, y, Double.parseDouble(Quest.getInput()))) {
                     points += 1;
+                    System.out.println("Right Answer! Plus 1 point.");
 
                     completedMath = true;
                     System.out.println("Good job! Challenge complete! Points: " + this.points);
+                    mathStage = 1;
+
                     checkPlayer();
                 } else {
                     System.out.println("Wrong answer! Restarting...");
@@ -199,17 +214,83 @@ public class Games {
 
         }else {
             System.out.println("Welcome to trivia quest, challenger " + name);
+            System.out.println("STAGE ONE");
+            if (triviaStage == 2 || stageOne()) {
+                triviaStage++;
+                System.out.println("STAGE TWO");
+                if (triviaStage == 3 || stageTwo()){
+                    triviaStage++;
+                    System.out.println("FINAL STAGE");
+                    if (stageThree()){
+                        points += 2;
+                    }
+                    else {
+                        trivia();
+                    }
+
+                }
+                else {
+                    trivia();
+                }
+
+            }
+            else {
+                trivia();
+            }
 
 
         }
 
         }
     public static boolean stageOne(){
-        for (int i = 0; i < 3; i++) {
+        int stagePoints = 0;
+        for (int i = 1; i <= 3; i++) {
             int random = (int) (Math.random() * 13) + 1;
+            System.out.println("Question " + i + " of 3");
             Trivia x = new Trivia(random);
 
-            points += x.question();
+            stagePoints += x.question();
+        }
+        if (stagePoints >= 3){
+            return true;
+        }
+        else {
+            System.out.println("You didn't get them all right :3 Try again!");
+            return false;
+        }
+    }
+    public static boolean stageTwo(){
+        int stagePoints = 0;
+        for (int i = 1; i <= 3; i++) {
+            int random = (int) (Math.random() * 13) + 1;
+            System.out.println("Question " + i + " of 4");
+            Trivia x = new Trivia(random);
+
+            stagePoints += x.question();
+        }
+        if (stagePoints >= 4){
+            return true;
+        }
+        else {
+            System.out.println("You didn't get them all right :3 Try again!");
+            return false;
+        }
+    }
+    public static boolean stageThree(){
+        int stagePoints = 0;
+        for (int i = 1; i <= 3; i++) {
+            int random = (int) (Math.random() * 13) + 1;
+            System.out.println("Question " + i + " of 5");
+            Trivia x = new Trivia(random);
+
+            stagePoints += x.question();
+        }
+        if (stagePoints >= 5){
+            return true;
+        }
+        else {
+            System.out.println("You didn't get them all right :3 Try again!");
+            return false;
         }
     }
     public void challenge(){
