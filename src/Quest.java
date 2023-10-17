@@ -20,6 +20,12 @@ public class Quest {
         // dynamic selection?
 
         while (!y.win) {
+            // dev mode
+            if (y.name.equals("a")){
+                y.level = 666;
+            }
+
+
             System.out.println("Welcome to League of Letters, " + y.name);
             System.out.println("Your points: " + y.points);
             System.out.println();

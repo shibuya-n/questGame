@@ -55,7 +55,7 @@ public class Trivia {
             case 4 :
                 System.out.println("Where is the computer science classroom located?");
                 System.out.println("A. Stuart Hall");
-                System.out.println("B. Syboni");
+                System.out.println("B. Siboni");
                 System.out.println("C. Vietnam");
                 System.out.println("D. Convent");
                 answer = "b";
@@ -71,7 +71,7 @@ public class Trivia {
                 System.out.println("B. Integers can store decimals");
                 System.out.println("C. Doubles can have negative numbers");
                 System.out.println("D. Doubles can store Strings and Integers");
-                answer = "d";
+                answer = "a";
 
                 if (answerCheck(Quest.getInput(), answer)){
                     return 1;
@@ -97,7 +97,7 @@ public class Trivia {
                 System.out.println("B. System.print();");
                 System.out.println("C. System.out.println();");
                 System.out.println("D. out.println()");
-                answer = "d";
+                answer = "c";
 
                 if (answerCheck(Quest.getInput(), answer)){
                     return 1;
@@ -110,7 +110,7 @@ public class Trivia {
                 System.out.println("B. Float");
                 System.out.println("C. String");
                 System.out.println("D. Double");
-                answer = "d";
+                answer = "c";
 
                 if (answerCheck(Quest.getInput(), answer)){
                     return 1;
@@ -136,7 +136,7 @@ public class Trivia {
                 System.out.println("B. Doubles can represent larger numbers compared to a float");
                 System.out.println("C. Man, I don't know");
                 System.out.println("D. Floats can store decimals");
-                answer = "d";
+                answer = "b";
 
                 if (answerCheck(Quest.getInput(), answer)){
                     return 1;
@@ -149,7 +149,7 @@ public class Trivia {
                 System.out.println("B. 45N");
                 System.out.println("C. 60N");
                 System.out.println("D. 55N");
-                answer = "d";
+                answer = "b";
 
                 if (answerCheck(Quest.getInput(), answer)){
                     return 1;

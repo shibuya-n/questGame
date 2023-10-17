@@ -6,7 +6,7 @@ public class Games {
 
     int mathStage = 1;
 
-    int triviaStage = 1;
+    static boolean triviaWin = false;
 
     boolean win = false;
 
@@ -215,34 +215,21 @@ public class Games {
         }else {
             System.out.println("Welcome to trivia quest, challenger " + name);
             System.out.println("STAGE ONE");
-            if (triviaStage == 2 || stageOne()) {
-                triviaStage++;
-                System.out.println("STAGE TWO");
-                if (triviaStage == 3 || stageTwo()){
-                    triviaStage++;
-                    System.out.println("FINAL STAGE");
-                    if (stageThree()){
-                        points += 2;
-                    }
-                    else {
-                        trivia();
-                    }
+            stageOne();
 
-                }
-                else {
-                    trivia();
-                }
+            if (triviaWin){
+                completedTrivia = true;
+                this.points += 6;
+                System.out.println("Good job! Challenge complete! Points: " + this.points);
 
+
+                checkPlayer();
             }
-            else {
-                trivia();
-            }
-
 
         }
 
         }
-    public static boolean stageOne(){
+    public static void stageOne(){
         int stagePoints = 0;
         for (int i = 1; i <= 3; i++) {
             int random = (int) (Math.random() * 13) + 1;
@@ -252,16 +239,17 @@ public class Games {
             stagePoints += x.question();
         }
         if (stagePoints >= 3){
-            return true;
+            stageTwo();
         }
         else {
             System.out.println("You didn't get them all right :3 Try again!");
-            return false;
+            stageOne();
         }
     }
-    public static boolean stageTwo(){
+    public static void stageTwo(){
+        System.out.println("STAGE TWO");
         int stagePoints = 0;
-        for (int i = 1; i <= 3; i++) {
+        for (int i = 1; i <= 4; i++) {
             int random = (int) (Math.random() * 13) + 1;
             System.out.println("Question " + i + " of 4");
             Trivia x = new Trivia(random);
@@ -269,16 +257,16 @@ public class Games {
             stagePoints += x.question();
         }
         if (stagePoints >= 4){
-            return true;
+            stageThree();
         }
         else {
             System.out.println("You didn't get them all right :3 Try again!");
-            return false;
+            stageTwo();
         }
     }
-    public static boolean stageThree(){
+    public static void stageThree(){
         int stagePoints = 0;
-        for (int i = 1; i <= 3; i++) {
+        for (int i = 1; i <= 5; i++) {
             int random = (int) (Math.random() * 13) + 1;
             System.out.println("Question " + i + " of 5");
             Trivia x = new Trivia(random);
@@ -286,11 +274,11 @@ public class Games {
             stagePoints += x.question();
         }
         if (stagePoints >= 5){
-            return true;
+            triviaWin = true;
         }
         else {
             System.out.println("You didn't get them all right :3 Try again!");
-            return false;
+            stageThree();
         }
     }
     public void challenge(){
