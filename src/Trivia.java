@@ -24,11 +24,7 @@ public class Trivia {
                 System.out.println("D. Ms. Romero");
                 answer = "a";
 
-                if (answerCheck(Quest.getInput(), answer)){
-                    return true;
-                } else {
-                    return false;
-                }
+                return answerCheck(Quest.getInput(), answer);
             case 2 :
                 System.out.println("Who is the head of the computer science department?");
                 System.out.println("A. Mr. Farrell");
@@ -37,11 +33,7 @@ public class Trivia {
                 System.out.println("D. Mr. Chau");
                 answer = "d";
 
-                if (answerCheck(Quest.getInput(), answer)){
-                    return true;
-                } else {
-                    return false;
-                }
+                return answerCheck(Quest.getInput(), answer);
             case 3 :
                 System.out.println("What does 'int' stand for in Java?");
                 System.out.println("A. Intentionally Feeding");
@@ -50,11 +42,7 @@ public class Trivia {
                 System.out.println("D. Integer");
                 answer = "d";
 
-                if (answerCheck(Quest.getInput(), answer)){
-                    return true;
-                } else {
-                    return false;
-                }
+                return answerCheck(Quest.getInput(), answer);
             case 4 :
                 System.out.println("Where is the computer science classroom located?");
                 System.out.println("A. Stuart Hall");
@@ -63,11 +51,7 @@ public class Trivia {
                 System.out.println("D. Convent");
                 answer = "b";
 
-                if (answerCheck(Quest.getInput(), answer)){
-                    return true;
-                } else {
-                    return false;
-                }
+                return answerCheck(Quest.getInput(), answer);
             case 5 :
                 System.out.println("What is the difference between a 'double' and an 'int'?");
                 System.out.println("A. Doubles can store decimals");
@@ -76,11 +60,7 @@ public class Trivia {
                 System.out.println("D. Doubles can store Strings and Integers");
                 answer = "a";
 
-                if (answerCheck(Quest.getInput(), answer)){
-                    return true;
-                } else {
-                    return false;
-                }
+                return answerCheck(Quest.getInput(), answer);
             case 6 :
                 System.out.println("How many bits can a single byte store?");
                 System.out.println("A. 8");
@@ -89,11 +69,7 @@ public class Trivia {
                 System.out.println("D. 69");
                 answer = "a";
 
-                if (answerCheck(Quest.getInput(), answer)){
-                    return true;
-                } else {
-                    return false;
-                }
+                return answerCheck(Quest.getInput(), answer);
             case 7 :
                 System.out.println("How would one print a statement in java?");
                 System.out.println("A. print();");
@@ -102,11 +78,7 @@ public class Trivia {
                 System.out.println("D. out.println()");
                 answer = "c";
 
-                if (answerCheck(Quest.getInput(), answer)){
-                    return true;
-                } else {
-                    return false;
-                }
+                return answerCheck(Quest.getInput(), answer);
             case 8 :
                 System.out.println("Which data type is used to store text?");
                 System.out.println("A. Char");
@@ -115,11 +87,7 @@ public class Trivia {
                 System.out.println("D. Double");
                 answer = "c";
 
-                if (answerCheck(Quest.getInput(), answer)){
-                    return true;
-                } else {
-                    return false;
-                }
+                return answerCheck(Quest.getInput(), answer);
             case 9 :
                 System.out.println("What does 12 % 2 equal?");
                 System.out.println("A. 12/2");
@@ -128,11 +96,7 @@ public class Trivia {
                 System.out.println("D. 4");
                 answer = "c";
 
-                if (answerCheck(Quest.getInput(), answer)){
-                    return true;
-                } else {
-                    return false;
-                }
+                return answerCheck(Quest.getInput(), answer);
             case 10 :
                 System.out.println("What is the difference between float and a double?");
                 System.out.println("A. Floats can represent larger numbers compared to a double");
@@ -141,11 +105,7 @@ public class Trivia {
                 System.out.println("D. Floats can store decimals");
                 answer = "b";
 
-                if (answerCheck(Quest.getInput(), answer)){
-                    return true;
-                } else {
-                    return false;
-                }
+                return answerCheck(Quest.getInput(), answer);
             case 11 :
                 System.out.println("What net force is required to accelerate a 15 kg box from a velocity of 6.0 ms–1 to 12 ms–1 in 2.0 s?");
                 System.out.println("A. 25N");
@@ -154,11 +114,7 @@ public class Trivia {
                 System.out.println("D. 55N");
                 answer = "b";
 
-                if (answerCheck(Quest.getInput(), answer)){
-                    return true;
-                } else {
-                    return false;
-                }
+                return answerCheck(Quest.getInput(), answer);
             case 12 :
                 System.out.println("What is a boolean?");
                 System.out.println("A. A true or false statement");
@@ -167,11 +123,7 @@ public class Trivia {
                 System.out.println("D. The name of a person");
                 answer = "a";
 
-                if (answerCheck(Quest.getInput(), answer)){
-                    return true;
-                } else {
-                    return false;
-                }
+                return answerCheck(Quest.getInput(), answer);
             case 13 :
                 System.out.println("How would you cast a string to an integer?");
                 System.out.println("A. valueOf();");
@@ -180,11 +132,7 @@ public class Trivia {
                 System.out.println("D. String.valueOf();");
                 answer = "d";
 
-                if (answerCheck(Quest.getInput(), answer)){
-                    return true;
-                } else {
-                    return false;
-                }
+                return answerCheck(Quest.getInput(), answer);
         }
         return true;
     }

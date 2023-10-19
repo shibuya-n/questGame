@@ -40,7 +40,8 @@ public class Games {
         }
     }
     public void scramble(){
-        System.out.println("Welcome to the scramble quest, challenger " + name);
+        System.out.println();
+        System.out.println("Welcome to the Scramble Arena, challenger " + name);
 
         String scrambleString = "";
         String solutions = "";
@@ -84,6 +85,7 @@ public class Games {
         if (Quest.getInput().equals(solutions)) {
             this.points++;
             System.out.println();
+            System.out.println("You've calmed down the angry horde of letters!");
             System.out.println("You gained a point! Current points: " + this.points );
             System.out.println();
             completedScramble = true;
@@ -91,7 +93,10 @@ public class Games {
 
         }
         else {
-            System.out.println("Wrong! Restarting...");
+            System.out.println("Wrong! The horde does not yield and overwhelms you.");
+            System.out.println("You black out...");
+            Quest.sleep(500);
+            System.out.println("You come to, back at where you first started.");
             System.out.println();
             scramble();
         }
@@ -112,9 +117,10 @@ public class Games {
             System.out.println("You aren't strong enough for this level yet. :(");
 
         } else {
-            System.out.println("Welcome to the math quest, challenger " + name);
+
 
             if (mathStage == 1) {
+                System.out.println();
                 System.out.println("Stage 1: Addition");
                 int x = randomInt();
                 int y = randomInt();
@@ -123,14 +129,18 @@ public class Games {
                 if (addition(x, y, Integer.parseInt(Quest.getInput()))) {
                     mathStage++;
                     points += 1;
-                    System.out.println("Right Answer! Plus 1 point.");
+                    System.out.println("Correct! You jump exactly " + (x+y) + " meters, dodging the attacks. +1 point.");
                     checkPlayer();
                     math();
                 } else {
-                    System.out.println("Wrong answer! Restarting...");
+                    System.out.println("Wrong answer! You pass out from the overwhelming guilt and shame that one gets when they can't do basic math.");
+                    Quest.sleep(500);
+                    System.out.println("You wake up at the same place you left off...");
+                    Quest.sleep(500);
                     math();
                 }
             } else if (mathStage == 2) {
+                System.out.println();
                 System.out.println("Stage 2: Subtraction");
                 int x = randomInt();
                 int y = randomInt();
@@ -139,15 +149,19 @@ public class Games {
                 if (subtraction(x, y, Integer.parseInt(Quest.getInput()))) {
                     mathStage++;
                     points += 1;
-                    System.out.println("Right Answer! Plus 1 point.");
+                    System.out.println("Right Answer! You recite the answer, creating a shield that blocks the attacks. +1 point.");
                     checkPlayer();
                     math();
                 } else {
-                    System.out.println("Wrong answer! Restarting...");
+                    System.out.println("Wrong answer! You pass out from the overwhelming guilt and shame that one gets when they can't do basic math.");
+                    Quest.sleep(500);
+                    System.out.println("You wake up at the same place you left off...");
+                    Quest.sleep(500);
                     math();
                 }
 
             } else if (mathStage == 3) {
+                System.out.println();
                 System.out.println("Stage 3: Multiplication");
                 int x = randomInt();
                 int y = randomInt();
@@ -156,11 +170,14 @@ public class Games {
                 if (multiplication(x, y, Integer.parseInt(Quest.getInput()))) {
                     mathStage++;
                     points += 1;
-                    System.out.println("Right Answer! Plus 1 point.");
+                    System.out.println("Nice! You create a " + (x*y) + " meter long sword out of pure energy and slice the rogue numbers. +1 point.");
                     checkPlayer();
                     math();
                 } else {
-                    System.out.println("Wrong answer! Restarting...");
+                    System.out.println("Wrong answer! You pass out from the overwhelming guilt and shame that one gets when they can't do basic math.");
+                    Quest.sleep(500);
+                    System.out.println("You wake up at the same place you left off...");
+                    Quest.sleep(500);
                     math();
                 }
             }
@@ -172,15 +189,18 @@ public class Games {
 
                 if (division(x, y, Double.parseDouble(Quest.getInput()))) {
                     points += 1;
-                    System.out.println("Right Answer! Plus 1 point.");
+                    System.out.println("Right Answer! You drop to the floor with a reaction speed of " + (double)(x/y) + " seconds. +1 point.");
 
                     completedMath = true;
-                    System.out.println("Good job! Challenge complete! Points: " + this.points);
+                    System.out.println("You dodged all the attacks! The merchants look at you in fear and run away. Points: " + this.points);
                     mathStage = 1;
 
                     checkPlayer();
                 } else {
-                    System.out.println("Wrong answer! Restarting...");
+                    System.out.println("Wrong answer! You pass out from the overwhelming guilt and shame that one gets when they can't do basic math.");
+                    Quest.sleep(500);
+                    System.out.println("You wake up at the same place you left off...");
+                    Quest.sleep(500);
                     math();
                 }
             }
@@ -213,7 +233,8 @@ public class Games {
             System.out.println("You aren't strong enough for this level yet. :(");
 
         }else {
-            System.out.println("Welcome to trivia quest, challenger " + name);
+            System.out.println();
+            System.out.println("'Hello, " + name + "', the old man greets...");
 
             System.out.println();
             System.out.println("Make sure to get all these questions right! You will have to restart if you get a question wrong!");
@@ -243,13 +264,19 @@ public class Games {
             Trivia x = new Trivia(random);
 
            if (x.question()){
+               System.out.println();
                System.out.println("Correct!");
+               System.out.println();
                stagePoints++;
            }
            else {
                System.out.println();
-               System.out.println("Wrong answer! Restarting...");
+               System.out.println("Wrong answer! You pass out, right in front of the strange man.");
+               System.out.println("He observes you closely...");
+
                System.out.println();
+               Quest.sleep(500);
+               System.out.println("You come to, back at the same place you started.");
                stageOne();
            }
         }
@@ -272,8 +299,12 @@ public class Games {
             }
             else {
                 System.out.println();
-                System.out.println("Wrong answer! Restarting...");
+                System.out.println("Wrong answer! You pass out, right in front of the strange man.");
+                System.out.println("He observes you closely...");
+
                 System.out.println();
+                Quest.sleep(500);
+                System.out.println("You come to, back at the same place you started.");
                 stageTwo();
             }
         }
@@ -295,8 +326,12 @@ public class Games {
             }
             else {
                 System.out.println();
-                System.out.println("Wrong answer! Restarting...");
+                System.out.println("Wrong answer! You pass out, right in front of the strange man.");
+                System.out.println("He observes you closely...");
+
                 System.out.println();
+                Quest.sleep(500);
+                System.out.println("You come to, the same place you started.");
                 stageThree();
             }
         }
@@ -310,6 +345,7 @@ public class Games {
             System.out.println("You aren't strong enough for this level yet. :(");
             this.win = true;
         }else {
+            System.out.println("The dragon roars, challenging you to a battle of wits...");
             //add challenge (binary convert?)
         }
     }
