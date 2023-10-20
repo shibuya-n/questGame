@@ -1,12 +1,52 @@
-import java.util.*;
-
 public class Convert {
-    public static String output;
 
-    public int stage;
 
-    public Convert (int userStage){
-        stage = userStage;
+
+    public boolean win = false;
+
+    public Convert () {
+
+    }
+
+    public int stageOne() {
+        System.out.println("Convert this binary code to hex form: ");
+        String randBinary = binaryGenerator();
+        System.out.println(randBinary);
+
+        if (Quest.getInput().equals(binaryToHex(randBinary))) {
+            return 1;
+        }
+        else {
+            return 0;
+        }
+    }
+    public int stageTwo(){
+        System.out.println("Convert this binary code to decimal form: ");
+        String randBinary = binaryGenerator();
+        System.out.println(randBinary);
+
+        String input = Quest.getInput();
+        String decimal = String.valueOf(binaryToDecimal(randBinary));
+        if (input.equals(decimal)){
+            return 1;
+        }
+        else {
+            return 0;
+        }
+    }
+    public int stageThree(){
+        System.out.println("Convert this decimal code to hex form: ");
+        String randBinary = binaryGenerator();
+        String randDecimal = String.valueOf(binaryToDecimal(randBinary));
+        String toHex = binaryToHex(randBinary);
+        System.out.println(randDecimal);
+
+        if (Quest.getInput().equals(toHex)) {
+            return 1;
+        }
+        else {
+            return 0;
+        }
     }
 
 
@@ -116,117 +156,7 @@ public class Convert {
         return hex.toString();
     }
 
-    public static void hexAsk() {
-        Scanner hexInput = new Scanner(System.in);
-        System.out.println("Insert a hex code");
-        String hex = hexInput.nextLine().toUpperCase();
 
-        if (output.equals("decimal")) {
-
-            System.out.println("Decimal conversion is: " + hexToDecimal(hex));
-            ask();
-
-        } else if (output.equals("binary")) {
-
-            System.out.println("Binary conversion is is: " + decimalToBinary(hexToDecimal(hex)));
-            ask();
-        } else {
-            System.out.println("Wrong input. Try again.");
-            hexAsk();
-        }
-    }
-
-    public static int hexToDecimal(String input) {
-        int total = 0;
-        int j = 0;
-
-        ArrayList<Integer> individualHex = new ArrayList<>();
-
-
-        for (int i = input.length() - 1; i >= 0; i--) {
-            String num = input.substring(i, i + 1);
-            switch (num) {
-                case "A":
-                    individualHex.add(10);
-                    break;
-                case "B":
-                    individualHex.add(11);
-                    break;
-                case "C":
-                    individualHex.add(12);
-                    break;
-                case "D":
-                    individualHex.add(13);
-                    break;
-                case "E":
-                    individualHex.add(14);
-                    break;
-                case "F":
-                    individualHex.add(15);
-                    break;
-
-                default:
-                     individualHex.add(Integer.parseInt(num));
-
-            }
-
-        }
-        for (int i = 0; i < individualHex.size(); i++){
-            total += individualHex.get(i) * Math.pow(16, j);
-
-            j++;
-        }
-        return total;
-        }
-
-    public static void decimalAsk() {
-        Scanner decInput = new Scanner(System.in);
-        System.out.println("Insert a decimal code");
-        int decimal = decInput.nextInt();
-
-        if (output.equals("binary")) {
-
-            System.out.println("Decimal conversion is: " + decimalToBinary(decimal));
-            ask();
-
-        } else if (output.equals("hex")) {
-
-
-
-
-
-            System.out.println("Hex conversion is: " + binaryToHex(decimalToBinary(decimal)));
-            ask();
-        } else {
-            System.out.println("Wrong input. Try again.");
-            decimalAsk();
-        }
-    }
-    public static String decimalToBinary(int input){
-        ArrayList<String> binaryCode = new ArrayList<>();
-        String binary = "";
-
-        int temp = input;
-        while (temp > 0) {
-            int x = temp/2;
-            binaryCode.add(String.valueOf(temp % 2));
-            temp = x;
-        }
-        for (int i = binaryCode.size()-1; i >= 0; i--){
-            binary += binaryCode.get(i);
-        }
-        if (binary.length() == 8){
-            return binary;
-        }
-        else {
-            int runTime = 8 - binary.length();
-            for (int i = 0; i < runTime; i++){
-                binary = "0" + binary;
-            }
-        }
-
-        return binary;
-    }
 }
 
 

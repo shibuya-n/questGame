@@ -82,7 +82,6 @@ public class Games {
 
         System.out.println();
         System.out.println("What is your answer?");
-        System.out.println(solutions);
 
         if (Quest.getInput().equals(solutions)) {
             this.points++;
@@ -349,6 +348,23 @@ public class Games {
         }else {
             System.out.println("The dragon roars, challenging you to a battle of wits...");
             //add challenge (binary convert?)
+
+            Convert game = new Convert();
+            int challengePoints = 1;
+            while (!game.win){
+                if (challengePoints <= 3) {
+                    challengePoints += game.stageOne();
+                }
+                else if (challengePoints <= 6){
+                    challengePoints += game.stageTwo();
+                }
+                else {
+                    challengePoints += game.stageThree();
+                }
+            }
+            if (game.win){
+                win = true;
+            }
 
 
         }
