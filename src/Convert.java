@@ -3,12 +3,27 @@ import java.util.*;
 public class Convert {
     public static String output;
 
-    public int stage = 1;
+    public int stage;
+
+    public Convert (int userStage){
+        stage = userStage;
+    }
 
 
+    public static String binaryGenerator(){
+        String binary = "";
+        for (int i = 0; i < 8; i++){
+            double random = Math.random();
+            if(random < 0.5) {
+                binary = binary + "0";
+            }
+            else {
+                binary = binary + "1";
+            }
 
-
-
+        }
+        return binary;
+    }
 
     public static int binaryToDecimal(String input) {
         int total = 0;

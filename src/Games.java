@@ -6,6 +6,8 @@ public class Games {
 
     int mathStage = 1;
 
+    int convertStage = 1;
+
     static boolean triviaWin = false;
 
     boolean win = false;
@@ -347,6 +349,8 @@ public class Games {
         }else {
             System.out.println("The dragon roars, challenging you to a battle of wits...");
             //add challenge (binary convert?)
+
+
         }
     }
 }
