@@ -14,7 +14,7 @@ public class Games {
     boolean completedMath = false;
     boolean completedTrivia = false;
 
-    public Games(String x){
+    public Games(String x) {
         name = x;
     }
 
@@ -39,34 +39,34 @@ public class Games {
             System.out.println();
         }
     }
-    public void scramble(){
+
+    public void scramble() {
         System.out.println();
         System.out.println("Welcome to the Scramble Arena, challenger " + name);
 
         String scrambleString = "";
         String solutions = "";
 
-        int ascii = (int)(Math.random() * 11) + 97;
+        int ascii = (int) (Math.random() * 11) + 97;
 
         for (int i = 0; i < 6; i++) {
 
-            ascii += (int)(Math.random() * 3) + 1;
+            ascii += (int) (Math.random() * 3) + 1;
 
-            solutions = solutions + (char)ascii;
+            solutions = solutions + (char) ascii;
 
         }
 
         String temp = "";
         temp += solutions;
 
-        for (int i = 0; i < solutions.length(); i++){
-            int random = (int)(Math.random() * temp.length()-1) + 1;
+        for (int i = 0; i < solutions.length(); i++) {
+            int random = (int) (Math.random() * temp.length() - 1) + 1;
 
             if (temp.length() == 1) {
                 scrambleString += temp;
                 break;
-            }
-            else {
+            } else {
                 scrambleString += temp.charAt(random);
 
                 temp = temp.substring(0, random) + temp.substring(random + 1);
@@ -85,13 +85,12 @@ public class Games {
             this.points++;
             System.out.println();
             System.out.println("You've calmed down the angry horde of letters!");
-            System.out.println("You gained a point! Current points: " + this.points );
+            System.out.println("You gained a point! Current points: " + this.points);
             System.out.println();
             completedScramble = true;
             checkPlayer();
 
-        }
-        else {
+        } else {
             System.out.println("Wrong! The horde does not yield and overwhelms you.");
             System.out.println("You black out...");
             Quest.sleep(500);
@@ -101,11 +100,9 @@ public class Games {
         }
 
 
-
-
     }
 
-    public static int randomInt(){
+    public static int randomInt() {
         return (int) (Math.random() * 10) + 1;
     }
 
@@ -128,7 +125,7 @@ public class Games {
                 if (addition(x, y, Integer.parseInt(Quest.getInput()))) {
                     mathStage++;
                     points += 1;
-                    System.out.println("Correct! You jump exactly " + (x+y) + " meters, dodging the attacks. +1 point.");
+                    System.out.println("Correct! You jump exactly " + (x + y) + " meters, dodging the attacks. +1 point.");
                     checkPlayer();
                     math();
                 } else {
@@ -169,7 +166,7 @@ public class Games {
                 if (multiplication(x, y, Integer.parseInt(Quest.getInput()))) {
                     mathStage++;
                     points += 1;
-                    System.out.println("Nice! You create a " + (x*y) + " meter long sword out of pure energy and slice the rogue numbers. +1 point.");
+                    System.out.println("Nice! You create a " + (x * y) + " meter long sword out of pure energy and slice the rogue numbers. +1 point.");
                     checkPlayer();
                     math();
                 } else {
@@ -179,8 +176,7 @@ public class Games {
                     Quest.sleep(500);
                     math();
                 }
-            }
-            else {
+            } else {
                 System.out.println("Stage 4: Division");
                 int x = randomInt();
                 int y = randomInt();
@@ -188,7 +184,7 @@ public class Games {
 
                 if (division(x, y, Double.parseDouble(Quest.getInput()))) {
                     points += 1;
-                    System.out.println("Right Answer! You drop to the floor with a reaction speed of " + (double)(x/y) + " seconds. +1 point.");
+                    System.out.println("Right Answer! You drop to the floor with a reaction speed of " + (double) (x / y) + " seconds. +1 point.");
 
                     completedMath = true;
                     System.out.println("You dodged all the attacks! The merchants look at you in fear and run away. Points: " + this.points);
@@ -205,20 +201,23 @@ public class Games {
             }
         }
     }
-    public static boolean addition (int randOne, int randTwo, int input){
-            int answer = randOne + randTwo;
 
-        return input == answer;
-        }
-    public static boolean subtraction(int randOne, int randTwo, int input){
-            int answer = randOne - randTwo;
+    public static boolean addition(int randOne, int randTwo, int input) {
+        int answer = randOne + randTwo;
+
         return input == answer;
     }
 
-    public static boolean multiplication(int randOne, int randTwo, int input){
+    public static boolean subtraction(int randOne, int randTwo, int input) {
+        int answer = randOne - randTwo;
+        return input == answer;
+    }
+
+    public static boolean multiplication(int randOne, int randTwo, int input) {
         int answer = randOne * randTwo;
         return input == answer;
     }
+
     public static boolean division(int randOne, int randTwo, double input) {
 
         double answer = (double) randOne / randTwo;
@@ -227,11 +226,11 @@ public class Games {
         return input == Math.round(answer * 100.0) / 100.0;
     }
 
-    public void trivia(){
+    public void trivia() {
         if (this.level < 3) {
             System.out.println("You aren't strong enough for this level yet. :(");
 
-        }else {
+        } else {
             System.out.println();
             System.out.println("'Hello, " + name + "', the old man greets...");
 
@@ -243,7 +242,7 @@ public class Games {
             System.out.println("STAGE ONE");
             stageOne();
 
-            if (triviaWin){
+            if (triviaWin) {
                 completedTrivia = true;
                 this.points += 6;
                 System.out.println("Good job! Challenge complete! Points: " + this.points);
@@ -254,37 +253,38 @@ public class Games {
 
         }
 
-        }
-    public static void stageOne(){
+    }
+
+    public static void stageOne() {
         int stagePoints = 0;
         for (int i = 1; i <= 3; i++) {
             int random = (int) (Math.random() * 13) + 1;
             System.out.println("Question " + i + " of 3");
             Trivia x = new Trivia(random);
 
-           if (x.question()){
-               System.out.println();
-               System.out.println("Correct!");
-               System.out.println();
-               stagePoints++;
-           }
-           else {
-               System.out.println();
-               System.out.println("Wrong answer! You pass out, right in front of the strange man.");
-               System.out.println("He observes you closely...");
+            if (x.question()) {
+                System.out.println();
+                System.out.println("Correct!");
+                System.out.println();
+                stagePoints++;
+            } else {
+                System.out.println();
+                System.out.println("Wrong answer! You pass out, right in front of the strange man.");
+                System.out.println("He observes you closely...");
 
-               System.out.println();
-               Quest.sleep(500);
-               System.out.println("You come to, back at the same place you started.");
-               stageOne();
-           }
+                System.out.println();
+                Quest.sleep(500);
+                System.out.println("You come to, back at the same place you started.");
+                stageOne();
+            }
         }
-        if (stagePoints >= 3){
+        if (stagePoints >= 3) {
             stageTwo();
         }
 
     }
-    public static void stageTwo(){
+
+    public static void stageTwo() {
         System.out.println("STAGE TWO");
         int stagePoints = 0;
         for (int i = 1; i <= 4; i++) {
@@ -292,11 +292,10 @@ public class Games {
             System.out.println("Question " + i + " of 4");
             Trivia x = new Trivia(random);
 
-            if (x.question()){
+            if (x.question()) {
                 System.out.println("Correct!");
                 stagePoints++;
-            }
-            else {
+            } else {
                 System.out.println();
                 System.out.println("Wrong answer! You pass out, right in front of the strange man.");
                 System.out.println("He observes you closely...");
@@ -307,23 +306,23 @@ public class Games {
                 stageTwo();
             }
         }
-        if (stagePoints >= 4){
+        if (stagePoints >= 4) {
             stageThree();
         }
 
     }
-    public static void stageThree(){
+
+    public static void stageThree() {
         int stagePoints = 0;
         for (int i = 1; i <= 5; i++) {
             int random = (int) (Math.random() * 13) + 1;
             System.out.println("Question " + i + " of 5");
             Trivia x = new Trivia(random);
 
-            if (x.question()){
+            if (x.question()) {
                 System.out.println("Correct!");
                 stagePoints++;
-            }
-            else {
+            } else {
                 System.out.println();
                 System.out.println("Wrong answer! You pass out, right in front of the strange man.");
                 System.out.println("He observes you closely...");
@@ -334,11 +333,12 @@ public class Games {
                 stageThree();
             }
         }
-        if (stagePoints >= 5){
+        if (stagePoints >= 5) {
             triviaWin = true;
         }
 
     }
+
     public void challenge() {
         Convert game = null;
         if (this.level <= 3) {
@@ -355,31 +355,49 @@ public class Games {
             while (!game.win) {
 
                 if (challengePoints <= 3) {
-
+                    System.out.println("Challenge #1 - Binary to Hex (" + challengePoints + "/9");
                     if (game.stageOne()) {
-                        System.out.println("Challenge #1 - Binary to Hex (" + challengePoints + "/9");
+
 
                         challengePoints++;
+                    } else {
+                        System.out.println("You black out from the overwhelming pressures of converting binary code to hex...");
+                        Quest.sleep(500);
+                        System.out.println("You wake up dazed and back where you left off...");
+                        System.out.println();
                     }
 
                 } else if (challengePoints <= 6) {
                     if (game.stageTwo()) {
                         System.out.println("Challenge #2 - Binary to Decimal (" + challengePoints + "/9");
+
+                        challengePoints++;
+                    } else {
+                        System.out.println("You black out from the overwhelming pressures of converting binary code to decimal...");
+                        Quest.sleep(500);
+                        System.out.println("You wake up dazed and back where you left off...");
+                        System.out.println();
                     }
                 } else {
                     if (game.stageThree()) {
-                        System.out.println("Challenge #2 - Binary to Decimal (" + challengePoints + "/9");
+                        System.out.println("Challenge #3 - Decimal to Hex (" + challengePoints + "/9");
 
+                        challengePoints++;
+
+                    } else {
+                        System.out.println("You black out from the overwhelming pressures of converting decimal code to hex...");
+                        Quest.sleep(500);
+                        System.out.println("You wake up dazed and back where you left off...");
+                        System.out.println();
                     }
                 }
+                if (game.win) {
+                    win = true;
+                }
             }
-            if (game.win){
-                win = true;
-            }
+
+
         }
-
-
-
     }
-    }
+}
 
