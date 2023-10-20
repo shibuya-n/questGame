@@ -118,6 +118,12 @@ public class Games {
             System.out.println("You aren't strong enough for this level yet. :(");
 
         } else {
+            System.out.println("Preparing numbers for battle...");
+            Quest.sleep(500);
+            System.out.println("You approach a shady group of merchants at a bar...");
+            Quest.sleep(500);
+            System.out.println("They start throwing numbers at you with deadly aim! Quick, use your math skills to nullify their attacks!");
+            System.out.println(name + ", MOVE!");
 
 
             if (mathStage == 1) {
@@ -234,6 +240,13 @@ public class Games {
             System.out.println("You aren't strong enough for this level yet. :(");
 
         }else {
+            System.out.println("Organizing trivia questions...");
+            Quest.sleep(500);
+            System.out.println("You approach an elderly man with a long, white beard...");
+            Quest.sleep(500);
+            System.out.println("He offers you a strange sword, won only if you get all his trivia questions right!");
+            System.out.println("You sit down across from him...");
+            Quest.sleep(500);
             System.out.println();
             System.out.println("'Hello, " + name + "', the old man greets...");
 
@@ -344,44 +357,121 @@ public class Games {
     public void challenge(){
         if (this.level <=3) {
             System.out.println("You aren't strong enough for this level yet. :(");
-            this.win = true;
         }else {
-            System.out.println("The dragon roars, challenging you to a battle of wits...");
-            Quest.sleep(1000);
-            //add challenge (binary convert?)
+            System.out.println("There seems to be inscriptions on the sword...");
+            System.out.println("Would you like to look closer? (yes/no)");
+            if (Quest.getInput().equals("yes")){
+                System.out.println("You look closer.");
+                Quest.sleep(500);
+                System.out.println("You suddenly feel an overwhelming headache and you close your eyes");
+                Quest.sleep(500);
+                System.out.println("You feel a hot, steamy breath on your forehead.");
+                Quest.sleep(500);
+                System.out.println("IT'S A BINARY DRAGON! DO THE RIGHT CONVERSIONS TO DEFEAT IT!");
+                Quest.sleep(500);;
+                System.out.println();
+                System.out.println("The dragon roars, challenging you to a battle of wits...");
+                Quest.sleep(1000);
+                //add challenge (binary convert?)
 
-            Convert game = new Convert();
-            int challengePoints = 1;
-            System.out.println("It looks at you expectantly, and finally asks you a question: ");
-            while (!game.win){
+                Convert game = new Convert();
+                int challengePoints = 1;
+                System.out.println("It looks at you expectantly, and finally asks you a question: ");
+                while (!game.win){
 
-                if (challengePoints <= 3) {
+                    if (challengePoints <= 3) {
+                        System.out.println("Challenge #1 - Binary to Hex (" + challengePoints + "/9)");
 
-                    if (game.stageOne()){
-                        System.out.println("Challenge #1 - Binary to Hex (" + challengePoints + "/9");
+                        if (game.stageOne()){
 
-                        challengePoints++;
+                            System.out.println();
+
+                            System.out.println("Correct! The dragon looks at you approvingly... only " + (9 - challengePoints) + " more questions to go...");
+
+
+                            challengePoints++;
+                        }
+                        else {
+                            System.out.println();
+
+
+                            System.out.println("Wrong answer! You slowly fade out of consciousness, the pressure of converting code too overwhelming...");
+                            System.out.println();
+                            Quest.sleep(1000);
+                            System.out.println("You wake up, back at where you left off...");
+                        }
+
                     }
+                    else if (challengePoints <= 6){
+                        System.out.println("Challenge #2 - Binary to Decimal (" + challengePoints + "/9)");
+                        if (game.stageTwo()){
+                            System.out.println();
 
-                }
-                else if (challengePoints <= 6){
-                    if(game.stageTwo()){
-                        System.out.println("Challenge #2 - Binary to Decimal (" + challengePoints + "/9");
+                            System.out.println("Correct! The dragon looks at you approvingly... only " + (9 - challengePoints) + " more questions to go...");
+
+
+                            challengePoints++;
+                        }
                     }
-                }
-                else {
-                    if (game.stageThree()){
-                        System.out.println("Challenge #2 - Binary to Decimal (" + challengePoints + "/9");
+                    else {
 
+
+                        if (challengePoints >= 10){
+                            System.out.println("The dragon seems satisfied...");
+                            Quest.sleep(2500);
+                            System.out.println("Your head starts to swirl...");
+                            Quest.sleep(2500);
+                            System.out.println("You appear back in the physical world, dazed.");
+                            System.out.println("Exhausted, you fall asleep, right then and there.");
+                            Quest.sleep(2500);
+                            System.out.println();
+                            Quest.sleep(2500);
+                            System.out.println();
+                            Quest.sleep(2500);
+                            System.out.println();
+                            Quest.sleep(2500);
+                            System.out.println("Thanks for playing my game!");
+                            System.out.println("-----------STATS-----------");
+                            System.out.println("Player " + name + "'s total points: " + points);
+                            System.out.println("Thanks for playing!");
+                            break;
+                        }
+                        else if (game.stageThree()){
+                            System.out.println("Challenge #3 - Hex to Decimal (" + challengePoints + "/9)");
+
+                            System.out.println();
+
+                            System.out.println("Correct! The dragon looks at you approvingly... only " + (9 - challengePoints) + " more questions to go...");
+                            System.out.println();
+
+
+                            challengePoints++;
+
+
+                        }
+                        else {
+                            System.out.println("Wrong answer! You slowly fade out of consciousness, the pressure of converting code too overwhelming...");
+                            System.out.println();
+                            Quest.sleep(1000);
+                            System.out.println("You wake up, back at where you left off...");
                         }
                     }
                 }
+                this.win = true;
+
             }
-            if (game.win){
-                win = true;
+            else {
+                System.out.println("Coward.");
+                System.out.println();
             }
 
 
         }
+
+
+
+
+
+        }
     }
-}
+

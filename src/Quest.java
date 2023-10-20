@@ -82,47 +82,21 @@ public class Quest {
                 y.scramble();
 
             } else if (input.equals("2")) {
-                System.out.println("Preparing numbers for battle...");
-                sleep(500);
-                System.out.println("You approach a shady group of merchants at a bar...");
-                sleep(500);
-                System.out.println("They start throwing numbers at you with deadly aim! Quick, use your math skills to nullify their attacks!");
-                System.out.println(y.name + ", MOVE!");
+
                 y.math();
 
             } else if (input.equals("3")) {
-                System.out.println("Organizing trivia questions...");
-                sleep(500);
-                System.out.println("You approach an elderly man with a long, white beard...");
-                sleep(500);
-                System.out.println("He offers you a strange sword, won only if you get all his trivia questions right!");
-                System.out.println("You sit down across from him...");
-                sleep(500);
+
 
                 y.trivia();
             } else if (input.equals("4")) {
-                System.out.println("There seems to be inscriptions on the sword...");
-                System.out.println("Would you like to look closer? (yes/no)");
-                if (getInput().equals("yes")){
-                    System.out.println("You look closer.");
-                    sleep(500);
-                    System.out.println("You suddenly feel an overwhelming headache and you close your eyes");
-                    sleep(500);
-                    System.out.println("You feel a hot, steamy breath on your forehead.");
-                    sleep(500);
-                    System.out.println("IT'S A BINARY DRAGON! DO THE RIGHT CONVERSIONS TO DEFEAT IT!");
-                    sleep(500);;
-                    System.out.println();
-                    y.challenge();
-                }
-                else {
-                    System.out.println("Coward.");
-                    System.out.println();
-                }
+                y.challenge();
 
             } else {
                 ask(y);
             }
+
+
 
         }
 
