@@ -347,19 +347,34 @@ public class Games {
             this.win = true;
         }else {
             System.out.println("The dragon roars, challenging you to a battle of wits...");
+            Quest.sleep(1000);
             //add challenge (binary convert?)
 
             Convert game = new Convert();
             int challengePoints = 1;
+            System.out.println("It looks at you expectantly, and finally asks you a question: ");
             while (!game.win){
+
                 if (challengePoints <= 3) {
-                    challengePoints += game.stageOne();
+
+                    if (game.stageOne()){
+                        System.out.println("Challenge #1 - Binary to Hex (" + challengePoints + "/9");
+
+                        challengePoints++;
+                    }
+
                 }
                 else if (challengePoints <= 6){
-                    challengePoints += game.stageTwo();
+                    if(game.stageTwo()){
+                        System.out.println("Challenge #2 - Binary to Decimal (" + challengePoints + "/9");
+                    }
                 }
                 else {
-                    challengePoints += game.stageThree();
+                    if (game.stageThree()){
+                        System.out.println("Challenge #2 - Binary to Decimal (" + challengePoints + "/9");
+
+                        }
+                    }
                 }
             }
             if (game.win){

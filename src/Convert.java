@@ -8,44 +8,47 @@ public class Convert {
 
     }
 
-    public int stageOne() {
-        System.out.println("Convert this binary code to hex form: ");
+    public boolean stageOne() {
         String randBinary = binaryGenerator();
+        System.out.println("Convert this binary code to hex form: " + randBinary);
+
         System.out.println(randBinary);
 
         if (Quest.getInput().equals(binaryToHex(randBinary))) {
-            return 1;
+            return true;
         }
         else {
-            return 0;
+            return false;
         }
     }
-    public int stageTwo(){
-        System.out.println("Convert this binary code to decimal form: ");
+    public boolean stageTwo(){
         String randBinary = binaryGenerator();
+        System.out.println("Convert this binary code to decimal form: " + randBinary);
+
         System.out.println(randBinary);
 
         String input = Quest.getInput();
         String decimal = String.valueOf(binaryToDecimal(randBinary));
         if (input.equals(decimal)){
-            return 1;
+            return true;
         }
         else {
-            return 0;
+            return false;
         }
     }
-    public int stageThree(){
-        System.out.println("Convert this decimal code to hex form: ");
+    public boolean stageThree(){
         String randBinary = binaryGenerator();
+        System.out.println("Convert this decimal code to hex form: " + randBinary);
+
         String randDecimal = String.valueOf(binaryToDecimal(randBinary));
         String toHex = binaryToHex(randBinary);
         System.out.println(randDecimal);
 
         if (Quest.getInput().equals(toHex)) {
-            return 1;
+            return true;
         }
         else {
-            return 0;
+            return false;
         }
     }
 

@@ -102,7 +102,7 @@ public class Quest {
                 y.trivia();
             } else if (input.equals("4")) {
                 System.out.println("There seems to be inscriptions on the sword...");
-                System.out.println("Would you like to look closer?");
+                System.out.println("Would you like to look closer? (yes/no)");
                 if (getInput().equals("yes")){
                     System.out.println("You look closer.");
                     sleep(500);
@@ -112,6 +112,7 @@ public class Quest {
                     sleep(500);
                     System.out.println("IT'S A BINARY DRAGON! DO THE RIGHT CONVERSIONS TO DEFEAT IT!");
                     sleep(500);;
+                    System.out.println();
                     y.challenge();
                 }
                 else {
