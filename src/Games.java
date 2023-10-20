@@ -6,8 +6,6 @@ public class Games {
 
     int mathStage = 1;
 
-    int convertStage = 1;
-
     static boolean triviaWin = false;
 
     boolean win = false;
@@ -341,47 +339,47 @@ public class Games {
         }
 
     }
-    public void challenge(){
-        if (this.level <=3) {
+    public void challenge() {
+        Convert game = null;
+        if (this.level <= 3) {
             System.out.println("You aren't strong enough for this level yet. :(");
             this.win = true;
-        }else {
+        } else {
             System.out.println("The dragon roars, challenging you to a battle of wits...");
             Quest.sleep(1000);
             //add challenge (binary convert?)
 
-            Convert game = new Convert();
+            game = new Convert();
             int challengePoints = 1;
             System.out.println("It looks at you expectantly, and finally asks you a question: ");
-            while (!game.win){
+            while (!game.win) {
 
                 if (challengePoints <= 3) {
 
-                    if (game.stageOne()){
+                    if (game.stageOne()) {
                         System.out.println("Challenge #1 - Binary to Hex (" + challengePoints + "/9");
 
                         challengePoints++;
                     }
 
-                }
-                else if (challengePoints <= 6){
-                    if(game.stageTwo()){
+                } else if (challengePoints <= 6) {
+                    if (game.stageTwo()) {
                         System.out.println("Challenge #2 - Binary to Decimal (" + challengePoints + "/9");
                     }
-                }
-                else {
-                    if (game.stageThree()){
+                } else {
+                    if (game.stageThree()) {
                         System.out.println("Challenge #2 - Binary to Decimal (" + challengePoints + "/9");
 
-                        }
                     }
                 }
             }
             if (game.win){
                 win = true;
             }
-
-
         }
+
+
+
     }
-}
+    }
+
