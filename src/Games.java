@@ -6,7 +6,7 @@ public class Games {
 
     int mathStage = 1;
 
-    int convertStage = 1;
+
 
     static boolean triviaWin = false;
 
@@ -28,17 +28,20 @@ public class Games {
             System.out.println("Congrats! You leveled up! The next stage is unlocked.");
             System.out.println();
         }
-        if (this.points >= 6 && completedMath) {
+        else if (this.points >= 6 && completedMath) {
             this.level++;
             System.out.println();
             System.out.println("Congrats! You leveled up! The next stage is unlocked.");
             System.out.println();
         }
-        if (this.points >= 9 && completedTrivia) {
+        else if (this.points >= 9 && completedTrivia) {
             this.level++;
             System.out.println();
             System.out.println("Congrats! You leveled up! The FINAL BOSS is unlocked.");
             System.out.println();
+        }
+        else {
+            System.out.print("");
         }
     }
     public void scramble(){
@@ -137,7 +140,8 @@ public class Games {
                     mathStage++;
                     points += 1;
                     System.out.println("Correct! You jump exactly " + (x+y) + " meters, dodging the attacks. +1 point.");
-                    checkPlayer();
+                    System.out.println("");
+
                     math();
                 } else {
                     System.out.println("Wrong answer! You pass out from the overwhelming guilt and shame that one gets when they can't do basic math.");
@@ -157,7 +161,8 @@ public class Games {
                     mathStage++;
                     points += 1;
                     System.out.println("Right Answer! You recite the answer, creating a shield that blocks the attacks. +1 point.");
-                    checkPlayer();
+                    System.out.println("");
+
                     math();
                 } else {
                     System.out.println("Wrong answer! You pass out from the overwhelming guilt and shame that one gets when they can't do basic math.");
@@ -178,7 +183,8 @@ public class Games {
                     mathStage++;
                     points += 1;
                     System.out.println("Nice! You create a " + (x*y) + " meter long sword out of pure energy and slice the rogue numbers. +1 point.");
-                    checkPlayer();
+                    System.out.println("");
+
                     math();
                 } else {
                     System.out.println("Wrong answer! You pass out from the overwhelming guilt and shame that one gets when they can't do basic math.");
@@ -190,13 +196,14 @@ public class Games {
             }
             else {
                 System.out.println("Stage 4: Division");
-                int x = randomInt();
-                int y = randomInt();
+                double x = randomInt();
+                double y = randomInt();
                 System.out.println("What is " + x + " / " + y + "? Round to the 2nd decimal place. ");
 
                 if (division(x, y, Double.parseDouble(Quest.getInput()))) {
                     points += 1;
-                    System.out.println("Right Answer! You drop to the floor with a reaction speed of " + (double)(x/y) + " seconds. +1 point.");
+                    System.out.println("Right Answer! You drop to the floor with a reaction speed of " + (x/y) + " seconds. +1 point.");
+                    System.out.println("");
 
                     completedMath = true;
                     System.out.println("You dodged all the attacks! The merchants look at you in fear and run away. Points: " + this.points);
@@ -227,9 +234,9 @@ public class Games {
         int answer = randOne * randTwo;
         return input == answer;
     }
-    public static boolean division(int randOne, int randTwo, double input) {
+    public static boolean division(double randOne, double randTwo, double input) {
 
-        double answer = (double) randOne / randTwo;
+        double answer = randOne / randTwo;
 
 
         return input == Math.round(answer * 100.0) / 100.0;
@@ -271,89 +278,94 @@ public class Games {
 
         }
     public static void stageOne(){
-        int stagePoints = 0;
-        for (int i = 1; i <= 3; i++) {
+        int stagePoints = 1;
+        while (stagePoints <= 3) {
+
             int random = (int) (Math.random() * 13) + 1;
-            System.out.println("Question " + i + " of 3");
+            System.out.println("Question " + stagePoints + " of 3");
             Trivia x = new Trivia(random);
 
-           if (x.question()){
-               System.out.println();
-               System.out.println("Correct!");
-               System.out.println();
-               stagePoints++;
-           }
-           else {
-               System.out.println();
-               System.out.println("Wrong answer! You pass out, right in front of the strange man.");
-               System.out.println("He observes you closely...");
 
-               System.out.println();
-               Quest.sleep(500);
-               System.out.println("You come to, back at the same place you started.");
-               stageOne();
-           }
+            if (x.question()) {
+                System.out.println();
+                System.out.println("Correct!");
+                System.out.println();
+                stagePoints++;
+            } else {
+                System.out.println();
+                System.out.println("Wrong answer! You pass out, right in front of the strange man.");
+                System.out.println("He observes you closely...");
+                System.out.println();
+
+                Quest.sleep(500);
+                System.out.println("You come to, the same place you started.");
+                stageOne();
+            }
         }
-        if (stagePoints >= 3){
-            stageTwo();
-        }
+        stageTwo();
 
     }
     public static void stageTwo(){
         System.out.println("STAGE TWO");
-        int stagePoints = 0;
-        for (int i = 1; i <= 4; i++) {
+
+        int stagePoints = 1;
+
+        while (stagePoints <= 4){
             int random = (int) (Math.random() * 13) + 1;
-            System.out.println("Question " + i + " of 4");
+            System.out.println("Question " + stagePoints + " of 4");
             Trivia x = new Trivia(random);
 
-            if (x.question()){
+
+            if (x.question()) {
+                System.out.println();
                 System.out.println("Correct!");
+                System.out.println();
                 stagePoints++;
-            }
-            else {
+            } else {
                 System.out.println();
                 System.out.println("Wrong answer! You pass out, right in front of the strange man.");
                 System.out.println("He observes you closely...");
-
                 System.out.println();
+
                 Quest.sleep(500);
-                System.out.println("You come to, back at the same place you started.");
+                System.out.println("You come to, the same place you started.");
                 stageTwo();
             }
         }
-        if (stagePoints >= 4){
-            stageThree();
-        }
+        stageThree();
 
     }
-    public static void stageThree(){
-        int stagePoints = 0;
-        for (int i = 1; i <= 5; i++) {
+    public static void stageThree() {
+        System.out.println("STAGE THREE");
+        int stagePoints = 1;
+
+        while (stagePoints <= 5) {
             int random = (int) (Math.random() * 13) + 1;
-            System.out.println("Question " + i + " of 5");
+            System.out.println("Question " + stagePoints + " of 5");
             Trivia x = new Trivia(random);
 
-            if (x.question()){
+
+            if (x.question()) {
+                System.out.println();
                 System.out.println("Correct!");
+                System.out.println();
                 stagePoints++;
-            }
-            else {
+            } else {
                 System.out.println();
                 System.out.println("Wrong answer! You pass out, right in front of the strange man.");
                 System.out.println("He observes you closely...");
-
                 System.out.println();
+
                 Quest.sleep(500);
                 System.out.println("You come to, the same place you started.");
                 stageThree();
             }
         }
-        if (stagePoints >= 5){
-            triviaWin = true;
-        }
+
+        triviaWin = true;
 
     }
+
     public void challenge(){
         if (this.level <=3) {
             System.out.println("You aren't strong enough for this level yet. :(");

@@ -29,9 +29,9 @@ public class Quest {
                 System.out.println();
                 System.out.println("Which challenge would you like to attempt?");
                 System.out.println("1. Scramble");
-                System.out.println("[LOCKED] Math | You need " + (" more points and  ");
-                System.out.println("[LOCKED] Trivia ");
-                System.out.println("FINAL BOSS (unlocked after level 3)");
+                System.out.println("[LOCKED] Math | You need " + (3 - y.points) + " more points and to complete Scramble!");
+                System.out.println("[LOCKED] Trivia | You need " + (6 - y.points) + " more points and to complete Math!");
+                System.out.println("FINAL BOSS (unlocked after level 3 and gaining 9 points)");
                 input = getInput();
             }
             else if (y.level == 2) {
@@ -41,8 +41,8 @@ public class Quest {
                 System.out.println("Which challenge would you like to attempt?");
                 System.out.println("1. Scramble");
                 System.out.println("2. Math [UNLOCKED]");
-                System.out.println("3. Trivia [LOCKED] ");
-                System.out.println("???(unlocked after level 3)");
+                System.out.println("[LOCKED] Trivia | You need " + (6 - y.points) + " more points and to complete Math!");
+                System.out.println("??? (unlocked after level 3 and gaining 9 points)");
                 input = getInput();
             }
 
@@ -54,7 +54,7 @@ public class Quest {
                     System.out.println("1. Scramble");
                     System.out.println("2. Math [UNLOCKED]");
                     System.out.println("3. Trivia [UNLOCKED] ");
-                    System.out.println("??? (unlocked after level 3)");
+                    System.out.println("??? (unlocked after level 3 and gaining 9 points)");
                     input = getInput();
             }
             else {
