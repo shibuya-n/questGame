@@ -122,7 +122,7 @@ public class Games {
             Quest.sleep(500);
             System.out.println("You approach a shady group of merchants at a bar...");
             Quest.sleep(500);
-            System.out.println("They start throwing numbers at you with deadly aim! Quick, use your math skills to nullify their attacks!");
+            System.out.println("They start throwing numbers at you with deadly precision! Quick, use your math skills to nullify their attacks!");
             System.out.println(name + ", MOVE!");
 
 

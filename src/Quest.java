@@ -13,9 +13,6 @@ public class Quest {
     public static void ask(Games y){
 
 
-
-
-
         // add animation?
         // dynamic selection?
 
@@ -32,8 +29,8 @@ public class Quest {
                 System.out.println();
                 System.out.println("Which challenge would you like to attempt?");
                 System.out.println("1. Scramble");
-                System.out.println("2. Math [LOCKED]");
-                System.out.println("3. Trivia [LOCKED] ");
+                System.out.println("[LOCKED] Math | You need " + (" more points and  ");
+                System.out.println("[LOCKED] Trivia ");
                 System.out.println("FINAL BOSS (unlocked after level 3)");
                 input = getInput();
             }
