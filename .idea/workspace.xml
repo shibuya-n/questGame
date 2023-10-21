@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9caa950-e9a3-43a5-bbca-d8d20e3f8fd7" name="Changes" comment="do the challenge and make eveyrthing look nice">
+    <list default="true" id="b9caa950-e9a3-43a5-bbca-d8d20e3f8fd7" name="Changes" comment="update format and do challenge">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_13_23,_10_43_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_13_23__10_43_AM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Convert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Convert.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Games.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Games.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Quest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Quest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +130,21 @@
       <option name="project" value="LOCAL" />
       <updated>1697522630414</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="update format and do challenge">
+      <created>1697829013950</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1697829013950</updated>
+    </task>
+    <task id="LOCAL-00012" summary="update format and do challenge">
+      <created>1697829024098</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1697829024098</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -152,6 +165,7 @@
     <MESSAGE value="more work on the trivia section" />
     <MESSAGE value="trivia if else doesn't work" />
     <MESSAGE value="do the challenge and make eveyrthing look nice" />
-    <option name="LAST_COMMIT_MESSAGE" value="do the challenge and make eveyrthing look nice" />
+    <MESSAGE value="update format and do challenge" />
+    <option name="LAST_COMMIT_MESSAGE" value="update format and do challenge" />
   </component>
 </project>
