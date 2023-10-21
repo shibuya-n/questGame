@@ -11,10 +11,11 @@ public class Convert {
     public boolean stageOne() {
         String randBinary = binaryGenerator();
         System.out.println("Convert this binary code to hex form: " + randBinary);
+        System.out.println(binaryToHex(randBinary));
 
-        System.out.println(randBinary);
 
-        if (Quest.getInput().equals(binaryToHex(randBinary))) {
+        if (Quest.getInput().equals(binaryToHex(randBinary).toLowerCase())) {
+
             return true;
         }
         else {
@@ -24,12 +25,15 @@ public class Convert {
     public boolean stageTwo(){
         String randBinary = binaryGenerator();
         System.out.println("Convert this binary code to decimal form: " + randBinary);
+        String decimal = String.valueOf(binaryToDecimal(randBinary));
+        System.out.println(decimal);
 
-        System.out.println(randBinary);
 
         String input = Quest.getInput();
-        String decimal = String.valueOf(binaryToDecimal(randBinary));
-        if (input.equals(decimal)){
+
+
+        if (input.equals(decimal.toLowerCase())){
+
             return true;
         }
         else {
@@ -38,13 +42,17 @@ public class Convert {
     }
     public boolean stageThree(){
         String randBinary = binaryGenerator();
-        System.out.println("Convert this decimal code to hex form: " + randBinary);
-
         String randDecimal = String.valueOf(binaryToDecimal(randBinary));
+        System.out.println("Convert this decimal code to hex form: " + randDecimal);
         String toHex = binaryToHex(randBinary);
-        System.out.println(randDecimal);
 
-        if (Quest.getInput().equals(toHex)) {
+        System.out.println(toHex);
+
+
+
+
+        if (Quest.getInput().equals(toHex.toLowerCase())) {
+
             return true;
         }
         else {

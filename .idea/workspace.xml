@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9caa950-e9a3-43a5-bbca-d8d20e3f8fd7" name="Changes" comment="connected binary - polish game now">
+    <list default="true" id="b9caa950-e9a3-43a5-bbca-d8d20e3f8fd7" name="Changes" comment="do the challenge and make eveyrthing look nice">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Convert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Convert.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Games.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Games.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Quest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Quest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,14 +31,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="game" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Quest" />
@@ -129,55 +131,7 @@
       <option name="project" value="LOCAL" />
       <updated>1697522630414</updated>
     </task>
-    <task id="LOCAL-00011" summary="connect binary to rest of game">
-      <option name="closed" value="true" />
-      <created>1697688851620</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1697688851620</updated>
-    </task>
-    <task id="LOCAL-00012" summary="connect binary to rest of game">
-      <option name="closed" value="true" />
-      <created>1697778076013</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1697778076013</updated>
-    </task>
-    <task id="LOCAL-00013" summary="connect binary to rest of game">
-      <option name="closed" value="true" />
-      <created>1697784095535</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1697784095535</updated>
-    </task>
-    <task id="LOCAL-00014" summary="connected binary - polish game now">
-      <option name="closed" value="true" />
-      <created>1697804115532</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1697804115532</updated>
-    </task>
-    <task id="LOCAL-00015" summary="connected binary - polish game now">
-      <option name="closed" value="true" />
-      <created>1697806210497</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1697806210497</updated>
-    </task>
-    <task id="LOCAL-00016" summary="connected binary - polish game now">
-      <option name="closed" value="true" />
-      <created>1697806337320</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1697806337320</updated>
-    </task>
-    <option name="localTasksCounter" value="17" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -198,8 +152,6 @@
     <MESSAGE value="more work on the trivia section" />
     <MESSAGE value="trivia if else doesn't work" />
     <MESSAGE value="do the challenge and make eveyrthing look nice" />
-    <MESSAGE value="connect binary to rest of game" />
-    <MESSAGE value="connected binary - polish game now" />
-    <option name="LAST_COMMIT_MESSAGE" value="connected binary - polish game now" />
+    <option name="LAST_COMMIT_MESSAGE" value="do the challenge and make eveyrthing look nice" />
   </component>
 </project>
